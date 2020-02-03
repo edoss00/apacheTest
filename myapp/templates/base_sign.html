@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- template for all pages displayed if user is not logged in -->
+<html>
+  <head>
+    {% block head %}
+    <title>{{title}}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <center>
+
+      <!-- where body goes -->
+      {% block content %}
+      {% endblock %}
+      <br>
+
+      <!-- display error messages -->
+      {% set msgs = get_flashed_messages(with_categories=true) %}
+      {% for category, msg in msgs %}
+      <p>
+        <font color="{{category}}"> {{ msg }} </font>
+      </p>
+      {% endfor %}
+
+    </center>
+  </body>
+
+</html>

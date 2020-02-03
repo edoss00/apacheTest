@@ -1,0 +1,175 @@
+Team Bits, Please: Elizabeth Doss(DB), Jackie Lin(Backend), Yaru Luo(Frontend), Emily Zhang(PM)
+SoftDev1 pd 1
+P00 -- Da Art of Storytellin' (Scenario 2)
+2019-10-28
+
+jackieL -- 2019-10-18 08:24
+Team Bits, Please established with members Jackie, Emily, Elizabeth and Yaru. Created collaborative repo and added doc directory with devlog.
+
+emilyZ -- 2019-10-19 18:25
+Added initial version of design document with components, tasks, site map, and database layout.
+
+emilyZ -- 2019-10-19 18:36
+Update README.md file with project name, team name, and roster.
+
+emilyZ -- 2019-10-21 19:19
+Create directories for organization.
+
+jackieL -- 2019-10-21 20:22
+Updated sitemap using dashed boxes to represent form action routes, changed database layout into three tables, and clarified search bar component
+
+jackieL -- 2019-10-21 20:46
+All joins match data from one table to match with rows in another, usually matching based
+on IDs. They return a proper subset of every possible combination of rows between the two
+tables. Inner join returns all the combinations where the clauses match exactly (most
+exclusive join). Left join is slightly more inclusive because all rows from the left
+table are automatically returned, even if they have no corresponding row in the second
+table based on the ON condition. Cross-join is the subset of all possible combinations
+between the rows of the two tables. If one table has M rows and the second has N rows,
+cross-join returns M x N rows. Inner join will be helpful for our website when we either
+want to match a blog entry or a blog to a blog or a user, respectively, when we are
+retrieving information from the database to display on the "Search" page. Left join is
+more useful for keeping track of the blogs or blog entries a user has, since a user may
+not necessarily have any blogs and a blog may not necessarily have any entries. Cross join
+s useful for returning all possible combinations, which might be useful if users are
+trying to put the same content on every blog. Since cross join returns every possible
+combination, it would easily copy over the same content. After reading and discussing
+these join methods, we have made a slight edit to the design doc renaming one of the
+columns in our database so that we can better implement the USING condition.
+
+yaruL -- 2019-10-21 21:03
+Response to Reading
+1. If we figure out an error, communicate it. Don't be a dick by letting someone else turn all snowflakes into urine.
+2. Incrementally develop and keep hoping the last thing we wrote is good enough to survive for a few hours so we can eat dinner and catch a nap.
+
+jackieL -- 2019-10-21 21:10
+Updated design doc to fix small connector error in site map
+
+elizabethD -- 2019-10-22 08:42
+Added database builder and created initial tables
+
+jackieL -- 2019-10-22 10:01
+Added all the functions for routes in app.py and updated design doc to reflect changes
+
+jackieL -- 2019-10-22 10:15
+Wrote out two really basic templates to test out routing
+
+jackieL -- 2019-10-22 19:27
+Added in function body for some of the routes after HTML templates were added
+
+yaruL -- 2019-10-22 19:37
+Added login and register html files, both have button that link to each other and dummy forms
+
+elizabethD -- 2019-10-22 22:04
+Added addUser() and verifyUser() functions for login page in test file
+
+emilyZ -- 2019-10-23 08:05
+Rename sign to welcome as according to sitemap
+
+jackieL -- 2019-10-23 08:11
+Fixed spacing error in Jinja code and moved the heading and links on the login and register pages
+
+jackieL -- 2019-10-23 10:19
+Modified Flask code to handle user input for register forms
+
+jackieL -- 2019-10-23 22:33
+Incorporated database functions written by Elizabeth into Flask code for registering user
+
+jackieL -- 2019-10-23 22:58
+Wrote short new function to return userID from blog.db and used it in Flask code to verify and register users
+
+jackieL -- 2019-10-24 08:02
+Pushed empty HTML templates for profile pages
+
+yaruL -- 2019-10-24 08:18
+Added NavBar
+
+elizabethD -- 2019-10-24 19:54
+Fixed user methods
+
+emilyZ -- 2019-10-24 22:21
+Add in Task the Toid, detailing instructions for running the program and listed dependencies
+
+jackieL -- 2019-10-25 01:43
+Wrote error handling faulty URLs for user profile
+
+elizabethD -- 2019-10-25 05:48
+Added all blog functions and some get blog methods, getBlogID nonfunctional
+
+emilyZ -- 2019-10-25 10:04
+Add content to About page and modify README.md
+
+jackieL -- 2019-10-25 14:50
+Incorporated user permissions in Jinja code and rendered all blogs on user profile
+
+emilyZ -- 2019-10-26 13:02
+Add basic search template
+
+elizabethD -- 2019-10-26 23:03
+Finished writing blog functions, added entry functions and methods, created search using keyword of blog title
+
+yaruL -- 2019-10-26 23:59
+Finished HTML pages
+
+elizabethD -- 2019-10-27 15:46
+Changed findBlog to return tuples of blog_id and title of blog
+
+elizabethD -- 2019-10-27 18:48
+Changed findBlog to return tuples of blog_id, title of blog, and username
+
+jackieL -- 2019-10-27 20:22
+Incorporated querystrings and new database functions to display blogs on profile page and entries on blog pages, reformatted some of the other pages
+
+jackieL -- 2019-10-27 22:11
+Incorporated database entry functions to render entries on blogs and allow owner to edit them, also made small changes to how HTML pages looked like
+
+jackieL -- 2019-10-27 22:58
+Modified database functions for editing an entry
+
+jackieL -- 2019-10-27 23:32
+Uploaded final version of design doc to reflect features we finished and updated site map
+
+jackieL -- 2019-10-27 22:51
+Final changes with error handling for faulty URLs
+
+emilyZ -- 2019-10-28 00:53
+Final change - handling extra spaces before and after search.
+
+jackieL -- 2019-10-29 08:32
+Added comments to app.py to facilitate understanding
+
+jackieL -- 2019-10-29 08:38
+Added comments to HTML pages to facilitate understanding
+
+elizabethD -- 2019-10-29 08:40
+Added comments to database files to facilitate understanding
+
+jackieL -- 2019-10-29 11:50
+Added Flask code and database function to delete entry from blog
+
+jackieL -- 2019-10-29 14:00
+Displayed list of all users on about page, reformatted some pages
+
+emilyZ -- 2019-10-29 14:54
+Update site map on new user display and delete entry
+
+jackieL -- 2019-10-29 20:39
+Added in new textError function to account for single quote errors
+
+jackieL -- 2019-10-29 21:01
+Modified textError function to account for double quote errors
+
+jackieL -- 2019-10-29 21:16
+Modified code to not allow for the same entry title in the same blog, accounting for whitespace
+
+jackieL -- 2019-10-29 21:30
+Fixed error with returning blogs by different users with the same title
+
+jackieL -- 2019-10-29 21:45
+Fixed error in displaying username in navbar
+
+jackieL -- 2019-10-29 21:52
+Fixed error in adding title with whitespace
+
+jackieL -- 2019-10-29 22:39
+Fixed problem with user being logged out when they redirected to certain routes 

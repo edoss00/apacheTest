@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- template for all pages that require user to be logged in -->
+<html>
+  <head>
+    {% block head %}
+    <title>{{title}}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <center>
+      <!-- navigation bar -->
+      {% block navbar %}
+      <div class="topnav">
+        <b>Hello, {{ username }}!</b>
+        <table>
+          <tr>
+            <td><a href="/user"> My Profile </a>|</td>
+            <td><a href="/search"> Search </a>|</td>
+            <td><a href="/about"> About </a>|</td>
+            <td><a href="/logout"> Log out</a></td>
+          </tr>
+        </table>
+      </div><hr>
+      {% endblock %}
+
+      <!-- where body goes -->
+      {% block content %}
+      {% endblock %}
+
+      <!-- display error messages -->
+      {% set msgs = get_flashed_messages(with_categories=true) %}
+      {% for category, msg in msgs %}
+        <p>
+          <font color="{{category}}"> {{ msg }} </font>
+        </p>
+      {% endfor %}
+
+    </center>
+  </body>
+
+</html>

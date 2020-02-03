@@ -1,0 +1,15 @@
+{% extends "base_sign.html" %}
+
+<!-- form to login -->
+{% block content %}
+  <h1>Sign In: </h1>
+  <form action='/auth' method="POST">
+      Username:<br>
+      <input type="text" name="username"><br>
+      Password:<br>
+      <input type="password" name="password">
+      <br>
+      <input type="submit" value="Submit">
+  </form><br>
+  <a href="/register">Need to create a new account?</a>
+{% endblock %}

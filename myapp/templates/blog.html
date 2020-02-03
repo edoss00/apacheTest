@@ -1,0 +1,44 @@
+{% extends "base_profile.html" %}
+
+{% block content %}
+<!-- info about the blog -->
+<div>
+  <font size="5">
+    <b>Blog Title: </b>{{ title }}<br>
+    <b>By: </b><a href="{{ userlink }}">{{ ownername }}</a><br><br>
+  </font>
+</div><br>
+
+<!-- display all entries in blog -->
+{% for title, content, id in entries %}
+
+<table width="50%" bgcolor="#EEEEEE" cellspacing="10">
+  <tr>
+    <td align="center">
+      <b>{{ title }}</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      {{ content }}
+    </td>
+  </tr>
+  <tr>
+    {% if isOwner %}
+    <td align="center">
+      <a href="/editentry?id={{id}}"><button type="submit">Edit</button></a>
+        <a href="/deleteentry?id={{id}}"><button type="submit"><font color="red">Delete</font></button></a>
+    </td>
+    {% endif %}
+  </tr>
+</table><br>
+{% endfor %}
+
+<!-- if logged in user owns the blog, allow them to create entry -->
+{% if isOwner %}
+<form>
+  <button type="submit" formaction="/editentry">Create Entry</button>
+</form>
+{% endif %}
+
+{% endblock %}

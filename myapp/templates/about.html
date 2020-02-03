@@ -1,0 +1,22 @@
+{% extends "base_profile.html" %}
+
+<!-- info about features of the website -->
+{% block content %}
+    <h2>P#00 by Bits, Please: Elizabeth Doss, Jackie Lin, Yaru Luo, and Emily Zhang</h2>
+    <b>Profile:</b><br>
+        Create a new blog by selecting the Create Blog button. <br><br>
+    <b>Blogs:</b><br>
+        Write blog posts through using the Create Entry button on your blog page. <br>
+        Edit posts using the edit button on each post. <br><br>
+    <b>Search:</b><br>
+        Search by keywords in blog titles. Leave blank to display all blogs on website.
+
+<br><br><br><hr width="50%">
+<div width="30%">
+  <br><u>List of All Registered Users:</u><br>
+  {% for username, id in users %}
+    <a href="/user?id={{id}}">{{ username }}</a><br>
+  {% endfor %}<br>
+</div>
+
+{% endblock %}
